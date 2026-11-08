@@ -247,6 +247,18 @@ button:disabled { cursor: default; }
   padding: 0.5em 1em 0;
 }
 
+.topbar-end { justify-content: flex-end; }
+
+.copyright {
+  flex: none;
+  padding: 0.35em 0 0.55em;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.62em;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 .mute-btn {
   width: 2em;
   height: 2em;
