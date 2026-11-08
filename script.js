@@ -384,6 +384,12 @@ function initApp() {
   };
 
   function buildDice() {
+    // 둥근 면 모서리 사이로 배경이 비치지 않게 안쪽을 채우는 조금 작은 정육면체
+    for (let n = 1; n <= 6; n++) {
+      const core = document.createElement('div');
+      core.className = `core f${n}`;
+      dice.appendChild(core);
+    }
     for (let n = 1; n <= 6; n++) {
       const face = document.createElement('div');
       face.className = `face f${n}`;

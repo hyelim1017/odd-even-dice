@@ -444,13 +444,6 @@ button:disabled { cursor: default; }
   perspective: calc(var(--s) * 4);
 }
 
-.tilt {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateX(-16deg) rotateY(20deg);
-}
-
 .dice {
   position: relative;
   width: 100%;
@@ -468,16 +461,27 @@ button:disabled { cursor: default; }
   padding: 12%;
   border-radius: 16%;
   background: radial-gradient(circle at 30% 25%, #ffffff, #eeebf3 55%, #cfc9da);
-  box-shadow: inset 0 0 calc(var(--s) * 0.08) rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 calc(var(--s) * 0.05) rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
 }
 
-.f1 { transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
-.f2 { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
-.f3 { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
-.f4 { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
-.f5 { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
-.f6 { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.face, .core { --z: calc(var(--s) / 2); }
+
+.core {
+  position: absolute;
+  inset: 4%;
+  --z: calc(var(--s) * 0.46);
+  border-radius: 12%;
+  background: #e6e2ec;
+  backface-visibility: hidden;
+}
+
+.f1 { transform: rotateY(0deg) translateZ(var(--z)); }
+.f2 { transform: rotateY(90deg) translateZ(var(--z)); }
+.f3 { transform: rotateX(90deg) translateZ(var(--z)); }
+.f4 { transform: rotateX(-90deg) translateZ(var(--z)); }
+.f5 { transform: rotateY(-90deg) translateZ(var(--z)); }
+.f6 { transform: rotateY(180deg) translateZ(var(--z)); }
 
 .pip {
   width: 72%;
