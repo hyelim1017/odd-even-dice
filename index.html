@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>홀짝 주사위</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="sparkles" aria-hidden="true"></div>
+
+    <!-- 시작 화면: 모드 선택 -->
+    <section id="startScreen" class="screen start">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>🚫 도박 안돼! 절대금지! 🚫</span><span>💀 도박은 반드시 잃는 게임입니다</span><span>⚠️ 한 번의 클릭이 중독의 시작</span><span>📞 도박 문제 상담: 1336</span>
+          <span>🚫 도박 안돼! 절대금지! 🚫</span><span>💀 도박은 반드시 잃는 게임입니다</span><span>⚠️ 한 번의 클릭이 중독의 시작</span><span>📞 도박 문제 상담: 1336</span>
+        </div>
+      </div>
+
+      <div class="start-body">
+        <span class="edu-badge">교육용 체험 도구 · 실제 돈 없음</span>
+        <p class="start-sub">'운이 좋으면 이길까?'</p>
+        <h1 class="start-title">홀짝게임</h1>
+        <div class="start-dice" aria-hidden="true">🎲</div>
+        <button class="mode-btn" data-mode="normal">
+          <strong>일반판</strong>
+          <small>짝수에 베팅 · 맞히면 1.8배</small>
+        </button>
+        <button class="mode-btn upgrade" data-mode="upgrade">
+          <strong>UPGRADE판</strong>
+          <small>홀/짝 선택 베팅 · 맞히면 1.5배</small>
+        </button>
+      </div>
+
+      <div class="neon-banner">💀 도박은 반드시 잃는 게임입니다</div>
+    </section>
+
+    <!-- 게임 화면 -->
+    <section id="gameScreen" class="screen game" hidden>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>🚫 도박 안돼! 절대금지! 🚫</span><span>💀 도박은 반드시 잃는 게임입니다</span><span>⚠️ 한 번의 클릭이 중독의 시작</span><span>📞 도박 문제 상담: 1336</span>
+          <span>🚫 도박 안돼! 절대금지! 🚫</span><span>💀 도박은 반드시 잃는 게임입니다</span><span>⚠️ 한 번의 클릭이 중독의 시작</span><span>📞 도박 문제 상담: 1336</span>
+        </div>
+      </div>
+
+      <div class="topbar">
+        <span class="edu-badge">교육용 체험 도구</span>
+        <button id="muteBtn" class="mute-btn" aria-label="음소거">🔊</button>
+      </div>
+
+      <div class="timer-panel">
+        <div id="timerLabel" class="timer-label">⏱ 베팅할까? 말까? 토의 시간</div>
+        <div id="timerDisplay" class="timer-display" aria-live="off"></div>
+        <div class="timer-settings">
+          <button id="minusBtn" class="chip" aria-label="5초 줄이기">−</button>
+          <input id="timeInput" class="time-input" type="number" min="1" max="600" step="1" aria-label="타이머 초">
+          <span class="unit">초</span>
+          <button id="plusBtn" class="chip" aria-label="5초 늘리기">+</button>
+          <span class="divider"></span>
+          <button class="chip preset" data-preset="10">10</button>
+          <button class="chip preset" data-preset="30">30</button>
+          <button class="chip preset" data-preset="60">60</button>
+        </div>
+        <div class="timer-controls">
+          <button id="startBtn" class="ctrl-btn start-btn">▶ 시작</button>
+          <button id="resetBtn" class="ctrl-btn">↺ 리셋</button>
+        </div>
+      </div>
+
+      <div id="diceArea" class="dice-area">
+        <div class="dice-bounce">
+          <div class="scene">
+            <div class="tilt">
+              <div id="dice" class="dice"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dice-shadow"></div>
+      </div>
+
+      <button id="rollBtn" class="roll-btn">🎲 주사위 굴리기</button>
+
+      <div class="neon-banner"><span id="slogan" class="show">💀 도박은 반드시 잃는 게임입니다</span></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
